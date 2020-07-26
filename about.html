@@ -1,0 +1,201 @@
+---
+layout: page
+title: "赵小恒"
+description: "人生如旅，今夜我住在这深夜里，萦绕这一袭寒风的暖意，开出一朵花的香息。"
+header-img: "img/post-bg-rwd.jpg"
+---
+
+
+<!-- Language Selector 
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
+-->
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>
+		<font color=#A52A2A size=4 >致橡树</font><br>
+		我如果爱你<br>
+		绝不像攀援的凌霄花，<br>
+		借你的高枝炫耀自己；<br>
+		我如果爱你<br>
+		绝不学痴情的鸟儿，<br>
+		为绿荫重复单调的歌曲；<br>
+		也不止像泉源，<br>
+		常年送来清凉的慰藉；<br>
+		也不止像险峰，<br>
+		增加你的高度，衬托你的威仪。<br>
+		甚至日光，<br>
+		甚至春雨。<br>
+		不，这些都还不够！<br>
+		我必须是你近旁的一株木棉，<br>
+		作为树的形象和你站在一起。<br>
+		根，紧握在地下；<br>
+		叶，相触在云里。<br>
+		每一阵风过，<br>
+		我们都互相致意，<br>
+		但没有人，<br>
+		听懂我们的言语。<br>
+		你有你的铜枝铁干，<br>
+		像刀，像剑，也像戟；<br>
+		我有我红硕的花朵，<br>
+		像沉重的叹息，<br>
+		又像英勇的火炬。<br>
+		我们分担寒潮、风雷、霹雳；<br>
+		我们共享雾霭、流岚、虹霓。<br>
+		仿佛永远分离，<br>
+		却又终身相依。<br>
+		这才是伟大的爱情，<br>
+		坚贞就在这里：<br>
+		爱<br>
+		不仅爱你伟岸的身躯，<br>
+		也爱你坚持的位置，<br>
+		足下的土地。<br>
+	</p>
+	</blockquote>
+	<!--
+    <p>Hey，我是<strong>赵小恒(ZH)</strong>，一只iOS程序猿，现在厦门工作。</p>
+
+    <p>这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与 <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的 个人博客。我在GitHub主页<a href="https://github.com/qiubaiying">👉GitHub·BY</a> 与 简书主页<a href="https://http://www.jianshu.com/u/e71990ada2fd">👉BY</a>。</p>
+
+    <p>工作、学习之余，我特别喜欢运动，跑步、健身和自由搏击都是我特别喜欢的运动。</p>
+
+    <p></p>
+    
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="http://huangxuan.me/">Hux</a></li>    </ul>
+	-->
+</div>
+
+<!-- English Version 
+<div class="en post-container">
+    <blockquote><p>Yet another iOS Developer. <br>
+    Yet another Life-long Student.</p></blockquote>
+
+    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+
+    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    
+    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://qiubaiying.github.io">BY</a></li>
+    </ul>
+</div>
+-->
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <!-- This id is used for indexing my loss comments forcedly -->
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "qiubaiying" %}
+        data-thread-id="0ee040117ec56f17aa7e2523d1eae19b"
+    {% else %}
+    <!-- U can just use this key generated to index comments at page about -->
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
