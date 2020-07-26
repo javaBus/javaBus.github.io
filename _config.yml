@@ -1,10 +1,10 @@
 # Site settings
 title: 木头马尾
-SEOTitle: 赵小恒的博客
+SEOTitle: javaBus的博客
 header-img: img/post-bg-desk.jpg
 email: 
 description: ""
-keyword: "ZH, ZH的集梦街, 赵小恒的博客, zhaoxiaoheng, 赵小恒, Java, Hadoop, Linux"
+keyword: "javaBus的博客, Java, Hadoop, Linux"
 url: "http://ronaldozh.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
